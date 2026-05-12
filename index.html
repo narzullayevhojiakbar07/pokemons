@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list {
+            gap: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
+            padding: 20px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li class="item">
+            <p class="id">No 1</p>
+            <img src="http://www.serebii.net/pokemongo/pokemon/001.png'" alt="" class="item-img">
+            <h3 class="title">Balbasaur</h3>
+            <p class="info"><strong>0.71m</strong> <strong>7.0 kg</strong></p>
+            <div class="button-wrapper">
+                <button>Grass</button>
+                <button>Poison</button>
+            </div>
+        </li>
+    </ul>
+    <script src="./pokemons.js"></script>
+    <script>
+        const elList = document.querySelector(".list")
+
+        elList.innerHTML = ""
+        for(let pokemon of pokemons){
+
+            elList.innerHTML += `
+            <li class="item">
+            <p class="id">No ${pokemon.id}</p>
+            <img src="${pokemon.img}" alt="" class="item-img">
+            <h3 class="title">${pokemon.name}</h3>
+            <p class="info"><strong>${pokemon.height}</strong> <strong>${pokemon.weight}</strong></p>
+            <div class="button-wrapper">
+                <button>Grass</button>
+                <button>Poison</button>
+            </div>
+            </li>
+        `
+        }
+    </script>
+</body>
+</html>
